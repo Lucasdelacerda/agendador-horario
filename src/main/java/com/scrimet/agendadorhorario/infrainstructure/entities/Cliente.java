@@ -6,22 +6,17 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "profissionais_tb")
+@AllArgsConstructor
 @Builder
-public class Profissional {
+@Table(name = "clientes_tb")
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
-    private String endereco;
+    private String email;
     @Column(nullable = false, unique = true)
     private String telefone;
-    @Column(nullable = false, unique = true)
-    private String email;
-    @Column(nullable = false)
-    private String areaProfissional;
 }
