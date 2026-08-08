@@ -49,7 +49,7 @@ public class ClienteService {
     }
     @Transactional(readOnly = true)
     public List<ConsultarClientesDTO> findByNome(String nome){
-        List<Cliente> cliente = clienteRepository.searchByNome(nome);
+        List<Cliente> cliente = clienteRepository.findByNomeContainingIgnoreCase(nome);
         return cliente.stream()
                 .map(ConsultarClientesDTO::new)
                 .toList();
