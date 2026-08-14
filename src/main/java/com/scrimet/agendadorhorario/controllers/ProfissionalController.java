@@ -1,4 +1,4 @@
-package com.scrimet.agendadorhorario.Controller;
+package com.scrimet.agendadorhorario.controllers;
 
 import com.scrimet.agendadorhorario.dtos.CadastroProfissionalDTO;
 import com.scrimet.agendadorhorario.dtos.ListarProfissionalDTO;
