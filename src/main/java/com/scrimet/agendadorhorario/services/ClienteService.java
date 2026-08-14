@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -49,7 +48,7 @@ public class ClienteService {
     }
     @Transactional(readOnly = true)
     public List<ConsultarClientesDTO> findByNome(String nome){
-        List<Cliente> cliente = clienteRepository.searchByNome(nome);
+        List<Cliente> cliente = clienteRepository.findByNomeContainingIgnoreCase(nome);
         return cliente.stream()
                 .map(ConsultarClientesDTO::new)
                 .toList();

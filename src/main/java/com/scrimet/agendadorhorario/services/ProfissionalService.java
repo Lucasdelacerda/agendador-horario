@@ -60,7 +60,7 @@ public class ProfissionalService {
     }
     @Transactional(readOnly = true)
     public List<ListarProfissionalDTO> findByNome(String nome){
-        List<Profissional> profissional = profissionalRepository.searchByNome(nome);
+        List<Profissional> profissional = profissionalRepository.findByNomeContainingIgnoreCase(nome);
         return profissional.stream()
                 .map(ListarProfissionalDTO::new)
                 .toList();
